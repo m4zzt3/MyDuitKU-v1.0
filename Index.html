@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Data Google Script via Vercel</h1>
+  <div id="hasil">Memuat data...</div>
+  <script>
+    fetch('/api/get-data')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('hasil').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+      });
+  </script>
+</body>
+</html>
